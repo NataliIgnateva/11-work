@@ -1,0 +1,302 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Cart / Womazing</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/header/favicon.ico">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/slick.css"> 
+    <link rel="stylesheet" href="assets/css/slick-theme.min.css"/>
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <div class="page">
+    <!--? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/logo/preloader_logo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    
+    <!-- Header Start -->
+    <header class="header header-sticky" id="header">
+        <div class="container  ">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 ">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                        </div>
+                </div>       
+                <div class="col-lg-5 col-md-5 col-sm-3 "> 
+                     <!-- Main-menu -->
+                            <nav>
+                                <ul id="navigation" class="menu__header">
+                                    <li class="menu__item">
+                                        <a href="index.html" class="menu__link ">Главная</a>
+                                    </li>
+                                    <li class="menu__item"><a href="shop.html" class="menu__link">Магазин</a>
+                                        <ul class="submenu">
+                                            <li><a href="blog.html" class="menu__link">Пальто</a></li>
+                                            <li><a href="blog_details.html" class="menu__link">Свитшоты</a></li>
+                                            <li><a href="elements.html" class="menu__link">Кардиганы</a></li>
+                                            <li><a href="elements.html" class="menu__link">Толстовки</a></li>
+                                        </ul>    
+                                    </li>
+                                    <li class="menu__item"><a href="about.html" class="menu__link ">О бренде</a></li>
+                                    <li class="menu__item"><a href="contact.html" class="menu__link ">Контакты</a></li>
+                                </ul>
+                            </nav>
+                </div> 
+                <div class="col-lg-4 col-md-4 col-sm-6 ml-auto">    
+                        <ul class="menu__header_right">
+                            <li> <button type="button" class="phone__btn"></button> </li>
+                            <li>
+                            <a href=tel:+74958235412 class="menu__item_phone">
+                                +7 (495) 823-54-12
+                            </a>
+                            </li> 
+                            <li class="menu__item_car"> <a href="cart.html"><button type="button" class="car__btn"></button></a><span><p class="car__col">3</p></span> </li> 
+                        </ul>
+                </div>
+
+                 <!-- Modal -->
+                <div class="popup-black">
+                    <div class="popup" id="popup">
+                            <div class="row justify-content-center">
+                                <a class="popup-close" href="#">X</a>
+                                <h3 class="popup-title">Заказать обратный звонок</h3>
+                                    <div class="col-12">
+                                        <form action="mail.php" id="modalform" action="#" class="modal-phone modalform js-form">
+                                            <input type="text" class="modal-phone__input" placeholder="Имя" name="name" required>
+                                            <input type="email" class="modal-phone__input" placeholder="E-mail" name="email" required>
+                                            <input type="tel" class="modal-phone__input" placeholder="Телефон" name="tel" required>
+                                            <button type="submit" class="btn modal-btn" data-submit >Заказать звонок</button>
+                                        </form>
+                                    </div>
+                            </div>
+                    </div>    
+                </div>
+
+                <!-- Сообщение "спасибо" после отправки формы -->
+                <div class="message-black">
+                    <div class="message" id="message">
+                        <div class="row justify-content-center">
+                            <h3 class="message-title">Отлично! Мы скоро вам перезвоним.</h3>
+                                <div class="col-12">
+                                    <form action="mail.php" id="messageform" action="#" class="message-phone modalform js-form">
+                                        <button type="button" class="btn message-btn">Закрыть</button>
+                                    </form>
+                                </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>  
+    </header>
+    <section class="crumbs">
+        <div class="container">
+            <div class="row ">
+                <div class="col-xl-12 col-lg-12 col-md-12 " > 
+                    <h1 class="crumbs__title"> Корзина</h1> 
+                    <ul class="crumbs__menu">
+                        <li class="crumbs__item">
+                            <a href="index.html" class="crumbs__link">Главная</a>
+                        </li>
+                        <li class="crumbs__item">—</li>
+                        <li class="crumbs__text">Корзина</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section> 
+    <section class="cart">
+        <div class="container">
+            <div class="row ">
+                <div class="col-xl-12 col-lg-12 col-md-12 " > 
+        <table>
+            <tbody>
+                <tr class="cart__stroke">
+                    <td class="cart__title">Товар</td>
+                    <td class="cart__title"></td>
+                    <td class="cart__title">Цена</td>
+                    <td class="cart__title">Количество</td>
+                    <td class="cart__title">Всего</td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" class="cart__close">X</button>
+                    </td>
+                    <td>  
+                        <div class="cart__wrapper">  
+                        <a href="product_details.html" class="card card__cart">
+                            <img src="assets/img/gallery/popular1.png" class="cart__image" alt="Девушка в футболке">
+                            <div class="card__overlay cart__overlay">
+                            </div>
+                        </a>
+                        <p class="cart__text"> Футболка USA </p>
+                        </div>
+                    </td>
+                    <td>
+                    <p class ="cart__text cart__price">$129</p>
+                    </td>
+                    <td>
+                         <input type="text" class="btn_col cart__btn" placeholder=" " name="amount" required>
+                    </td>
+                    <td>
+                       <p class ="cart__text cart__price">$129</p> 
+                    </td>
+                </tr>
+            </tbody>
+        </table> 
+        </div>
+        </div>   
+        </div>    
+    </section> 
+    <section class="coupon">
+        <div class="container">
+            <div class="row ">
+                <div class="col-xl-3 col-lg-4 col-md-6 " >
+                    <input type="text" class="btn_col btn__coupon" placeholder="Введите купон " name="coupon" required>
+                </div>
+                <div class="col-xl-6 col-lg-4 col-md-6 " >
+                    <a href="#" class="btn white-btn apply-btn ">Применить купон</a>
+                </div> 
+                <div class="col-xl-3 col-lg-4 col-md-0 " >
+                    <a href="#" class="btn white-btn update-btn ">Обновить корзину</a>
+                </div>      
+            </div>
+            <div class="row ">
+                <div class="col-xl-12 col-lg-12 col-md-12 " >
+                    <p class="coupon__subtotal">Подытог:<span class="coupon__price">$129</span></p>
+                    <div class="coupon__wrapper">
+                    <div class="coupon__fon">
+                         <p class="coupon__total">Итого:<span class="coupon__price_total">$129</span></p>
+                    </div>
+                        <a href="#" class="btn btn_add-cart">Оформить заказ</a>
+                    </div>    
+                </div>
+            </div>        
+        </div>         
+    </section>           
+
+     <!-- Footer -->
+        <footer class="footer" id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-5 ">   
+                        <!-- Logo -->
+                        <div class="footer__logo">
+                            <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                        </div>
+                        <ul class="footer__rights">
+                            <li><span class="footer__rights_item">
+                                © Все права защищены </span>
+                            </li>
+                            <li><a href="#" class="footer__rights_item">Политика конфиденциальности</a></li>
+                            <li><a href="#" class="footer__rights_item">Публичная оферта</a></li>
+                        </ul>    
+                    </div>  
+                    <div class="col-lg-5 col-md-5 col-sm-1 ">  
+                     <!-- Main-menu -->
+                            <nav>
+                                <ul id="navigation" class="footer__header">
+                                    <li class="menu__item"><a href="index.html" class="menu__link active ">Главная</a></li>
+                                    <li class="menu__item"><a href="shop.html" class="menu__link">Магазин</a>
+                                        <ul class="footer__submenu">
+                                            <li><a href="blog.html" class="menu__link">Пальто</a></li>
+                                            <li><a href="blog_details.html" class="menu__link">Свитшоты</a></li>
+                                            <li><a href="elements.html" class="menu__link">Кардиганы</a></li>
+                                            <li><a href="elements.html" class="menu__link">Толстовки</a></li>
+                                        </ul>    
+                                    </li>
+
+                                    <li class="menu__item"><a href="about.html" class="menu__link">О бренде</a></li>
+                                    <li class="menu__item"><a href="contact.html" class="menu__link">Контакты</a></li>
+                                </ul>
+                            </nav>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-sm-6">  
+                        <ul class="footer__menu_right text-right">
+                            <li class="footer__tel">
+                                <a href=tel:+74958235412 class="footer__phone">
+                                    +7 (495) 823-54-12
+                                </a>
+                            </li> 
+                            <li class="footer__mail">
+                                <a href="mailto:hello@womazing.com">
+                                    hello@womazing.com
+                                </a> 
+                            </li> 
+                            <li >
+                                <!--noindex-->
+                                <a href="https://www.instagram.com" rel="nofollow noopener noreferrer" target="_blank" class="footer__instagram footer__item">
+                                <img src="assets/img/footer/instagram.svg" alt="Instagram">
+                                </a>
+                                <!--noindex-->
+                                <!--noindex-->
+                                <a href="https://m.facebook.com" rel="nofollow noopener noreferrer" target="_blank" class="footer__facebook footer__item">
+                                <img src="assets/img/footer/facebook.svg" alt="Facebook">
+                                </a>
+                                <!--noindex-->
+                                <!--noindex-->
+                                <a href="https://twitter.com" rel="nofollow noopener noreferrer" target="_blank" class="footer__twitter footer__item">
+                                <img src="assets/img/footer/twitter.svg" alt="Twitter">
+                                </a>
+                                <!--noindex-->
+                            </li>     
+                            <li class="footer__visa">
+                                <img src="assets/img/footer/visa-mastercard.svg" alt="Visa-mastercard">
+                            </li>   
+                        </ul>
+                    </div>
+                </div>      
+            </div> 
+        </footer>
+    </div>
+    <!-- Footer end -->
+
+    <!-- JS here -->
+
+    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- Jquery Mobile Menu -->
+    <script src="./assets/js/jquery/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="./assets/js/slick.min.js"></script>
+         
+    <!-- Parallax -->
+    <script src="./assets/js/parallax/parallax.min.js"></script>
+
+    <!-- contact js -->
+    <script src="./assets/js/jquery/jquery.form.js"></script>
+    <script src="./assets/js/jquery/jquery.validate.min.js"></script>
+  
+    <!-- Slider -->
+    <script src="./assets/js/slider/slider.js"></script>
+    
+    <!-- Jquery Plugins, main Jquery -->    
+    <script src="./assets/js/main.js"></script>
+ </body>
+</html>
